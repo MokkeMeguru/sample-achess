@@ -1,0 +1,4 @@
+/app/coverage.out
+/app/bin
+!/app/bin/.keep
+.DS_Store

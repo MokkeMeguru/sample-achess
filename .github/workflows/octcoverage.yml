@@ -1,0 +1,24 @@
+# code is borrowed from https://yaserarenai.com/post/20220816-octocov/
+name: Test
+on:
+  push:
+    branches:
+      - main
+    pull_request:
+
+jobs:
+  golang-test:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version-file: "./app/go.mod"
+          cache: true
+      - name: test
+        working-directory: app
+        run: make ci-test
+      - name: create report
+        uses: k1LoW/octcov-action@v0 --2
