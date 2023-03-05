@@ -1,8 +1,10 @@
+# https://speakerdeck.com/k1low/tech-stand-number-9-github
 coverage:
   badge:
     path: docs/coverage.svg
   paths:
     - app/coverage.out
+push:
 codeToTestRatio:
   code:
     - "app/**/*.go"
