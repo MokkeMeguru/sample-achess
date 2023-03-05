@@ -2,8 +2,6 @@
 name: Test
 on:
   push:
-    branches:
-      - main
     pull_request:
 
 jobs:
@@ -15,10 +13,13 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
-          go-version-file: "./app/go.mod"
+          go-version-file: "app/go.mod"
+          cache-dependency-path: "app/go.sum"
           cache: true
       - name: test
         working-directory: app
         run: make ci-test
       - name: create report
-        uses: k1LoW/octcov-action@v0 --2
+        uses: k1LoW/octocov-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
