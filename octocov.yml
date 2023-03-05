@@ -1,4 +1,6 @@
 coverage:
+  badge:
+    path: docs/coverage.svg
   paths:
     - app/coverage.out
 codeToTestRatio:
