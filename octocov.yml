@@ -4,6 +4,7 @@ coverage:
     path: docs/coverage.svg
   paths:
     - app/coverage.out
+push:
 codeToTestRatio:
   code:
     - "app/**/*.go"
