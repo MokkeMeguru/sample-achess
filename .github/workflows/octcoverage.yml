@@ -4,10 +4,6 @@ on:
   push:
     pull_request:
 
-permissions:
-  issues: write
-  pull-requests: write
-
 jobs:
   golang-test:
     name: lint
