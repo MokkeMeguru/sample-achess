@@ -6,6 +6,7 @@ on:
 
 permissions:
   issues: write
+  pull-requests: write
 
 jobs:
   golang-test:
@@ -24,3 +25,5 @@ jobs:
         run: make ci-test
       - name: create report
         uses: k1LoW/octocov-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
